@@ -20,8 +20,8 @@ def get_status(hostname):
     if debug is not None:
         res = os.system("ping -c 1 %s 1>/dev/null 2>/dev/null" % ip)
         if res == 0:
-            return "ONLINE"
-        return "OFFLINE"
+            return "\033[32mONLINE\033[39m"
+        return "\033[31mOFFLINE\033[39m"
     else:
         return "N/A"
 
